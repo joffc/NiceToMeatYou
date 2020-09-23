@@ -1,8 +1,8 @@
 pragma solidity >=0.4.24;
 
 /**
- * @title Roles
- * @Librairie permettant la gestion des roles assignés aux acteurs.
+ * title Roles
+ * Librairie permettant la gestion des roles assignés aux acteurs.
  */
 library Roles {
   struct Role {
@@ -10,7 +10,7 @@ library Roles {
   }
 
   /**
-   * @ donne un droit d'acces a ce role sur un contrat suivant l'adresse
+   * donne un droit d'acces a ce role sur un contrat suivant l'adresse
    */
   function add(Role storage role, address account) internal {
     require(account != address(0));
@@ -20,7 +20,7 @@ library Roles {
   }
 
   /**
-   * @ enleve le droit d'acces a ce role sur un contrat suivant l'adresse
+   *  enleve le droit d'acces a ce role sur un contrat suivant l'adresse
    */
   function remove(Role storage role, address account) internal {
     require(account != address(0));
@@ -30,8 +30,8 @@ library Roles {
   }
 
   /**
-   * @ verifie que le compte (l'adresse) a bien un droit d'acces
-   * @return bool
+   *  verifie que le compte (l'adresse) a bien un droit d'acces
+   * return bool
    */
   function has(Role storage role, address account)
     internal
