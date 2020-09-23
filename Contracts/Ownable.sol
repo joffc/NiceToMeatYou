@@ -16,9 +16,9 @@ contract Ownable {
         emit TransferOwnership(address(0), origOwner);
     }
 
-    // LFonction permettant de récupérer l'adresse du propriétaire du contrat
+    // Fonction permettant de récupérer l'adresse du propriétaire du contrat
     
-    function ownerLookup() public view returns (address) {
+    function AdresseProprietaire() public view returns (address) {
         return origOwner;
     }
 
@@ -29,7 +29,7 @@ contract Ownable {
         _;
     }
 
-    // Fonction permettant de vérifier que l'adresse appelé appartiene bien à la bonne personne 
+    // Fonction permettant de vérifier que l'adresse appelé appartient à la bonne personne 
     
     function EstProprietaire() public view returns (bool) {
         return msg.sender == origOwner;
@@ -37,14 +37,14 @@ contract Ownable {
 
     // Définition de la fonction permettant de retirer les droits du propriétaire du contrat
     
-    function SuppProprieter() public onlyOwner {
+    function SuppPropriete() public onlyOwner {
         emit TransferOwnership(origOwner, address(0));
         origOwner = address(0);
     }
 
     // Définition d'une fonction publique permettant le changement de propriétaire (tout le monde peut attribuer des droits)
     
-    function ChangementPropriter(address newOwner) public onlyOwner {
+    function ChangementProprietaire(address newOwner) public onlyOwner {
         _transferOwnership(newOwner);
     }
 
