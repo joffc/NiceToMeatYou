@@ -140,14 +140,14 @@ Permet du mettre des barrières si une étape veut être passer sur le contrat s
  Etape 1 : Autorisation pour le producteur à produire de la viande
 */
   function NouvelleViande(uint _meatID, string memory _originFarmName, string memory _originFarmInformation, string memory _originMeatType) public
-    onlyFarmer() // check address belongs to farmerRole
+    onlyFarmer() // Seul le Farmer peut appeler la fonction
     {
 
     address distributorID;   // adresse vide du distributeur
     address labelID;         // celle du label
     address retailerID;      // celle du détaillant
     
-    Item memory newProduce;  // Creéation d'une nouvelle structure en mémoire
+    Item memory newProduce;  // Création d'une nouvelle structure en mémoire
     
     newProduce.meatID = _meatID;                                 //meatID généré par le producteur, pouvant être vérifié par le client
     newProduce.ownerID = msg.sender;                             // Adresse Metamask-Ethereum du propriétaire du produit à un instant t
