@@ -1,0 +1,11 @@
+from web3 import Web3
+
+infura_url= "https://ropsten.infura.io/v3/2f5c3f0b417a4db0a89aa80f820f35f1"
+
+web3=Web3(Web3.HTTPProvider(infura_url))
+
+
+data = web3.eth.getTransaction('0xe7d629cc9ea77f4cd70d4982d088cbace49709da1460f12e5b696729fad5d2c7')
+
+history = data.input
+print (history)
